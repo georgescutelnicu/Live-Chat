@@ -1,0 +1,185 @@
+/* Apply styles to the body */
+body {
+    background-image: url('/static/images/background.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+/* Apply styles to the content */
+.content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 96vh;
+}
+
+/* Apply styles to the form */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+    max-width: 400px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Apply styles to the form header */
+.container h3 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Apply styles to the text inputs */
+.container input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+/* Apply styles to the buttons container */
+.button-container {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+/* Apply styles to the buttons */
+.container button {
+    flex: 1;
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    background-color: #666;
+    color: #fff;
+    transition: background-color 0.3s, color 0.3s;
+    width: 150px;
+}
+
+/* Apply hover effect for buttons */
+.container button:hover {
+    background-color: #333;
+}
+
+/* Apply styles to the instructions div */
+.instructions {
+    margin-top: 1%;
+    padding-bottom: 4px;
+}
+
+/* Apply styles to the the errors */
+.error-message {
+    color: #ff6b6b;
+    font-size: 16px;
+    margin-top: 0px;
+}
+
+/* Apply styles to the instructions message */
+.instructions-message {
+    color: #333;
+    font-size: 16px;
+    margin-top: 0px;
+    text-align: center;
+}
+
+/* Apply styles to the container room */
+.container-room{
+    padding: 0px;
+    border: 1px gray solid;
+
+}
+
+/* Apply styles to the chat box */
+.chat-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 60vh;
+    height: 75vh;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+/* Apply styles to the chat and chat container */
+.chat {
+    overflow-y: auto;
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    flex: 1;
+}
+
+#chat {
+    flex: 1;
+    }
+
+/* Apply styles to the chat input */
+.chat-input {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding-top: 10px;
+}
+
+/* Apply styles to the chat input [type=text] */
+.chat-input input[type="text"] {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+/* Apply style to the send button */
+.chat-input button {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    background-color: #666;
+    color: #fff;
+    transition: background-color 0.3s, color 0.3s;
+    width: 80px;
+    margin-left: 10px;
+}
+
+/* Apply hover effect to the send button */
+.chat-input button:hover {
+    background-color: #333;
+}
+
+/* Apply styles to the chat messages */
+.chat .msg {
+    padding: 10px;
+    margin: 5px;
+    border-radius: 10px;
+    background-color: #f0f0f0;
+}
+
+/* Apply styles to the sender's name in chat messages */
+.chat .msg strong {
+    color: #333;
+    font-weight: bold;
+    margin-right: 5px;
+}
+
+/* Apply styles to the message content in chat messages */
+.chat .msg span {
+    color: #000;
+}

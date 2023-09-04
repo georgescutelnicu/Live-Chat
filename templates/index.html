@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<!-- Create a form for joining or creating a chat room -->
+ <form method="post" class="container">
+    <h3>Join or create a chat room!</h3>
+    <input type="text" placeholder="Pick a name" name="username" value="{{username}}">
+    <input type="text" placeholder="Room code" name="room_code" value="{{room_code}}">
+    <div class="button-container">
+        <button type="submit" name="join">Join a Room</button>
+        <button type="submit" name="create">Create a Room</button>
+    </div>
+     <hr>
+ </form>
+
+<!-- Display instructions or error messages -->
+<div class="container instructions">
+{% if error %}
+    <p class="error-message"><strong>{{error}}</strong></p>
+{% else %}
+    <p class="instructions-message"><strong>
+        In order to create a room, the room code must have 5 characters in length (only letters and numbers allowed),
+        otherwise it will be generated automatically.
+    </strong></p>
+
+{% endif %}
+</div>
+
+{% endblock %}

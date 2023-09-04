@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<!-- Display the room code -->
+<div class="container container-room">  <h3>Room Code: {{room_code}}</h3>
+</div>
+
+<div class="chat-box">
+  <!-- Chat box for displaying messages -->
+  <div class="chat" id="chat"> </div>
+  <!-- Chat input and send button -->
+  <div class="chat-input">
+    <input type="text" placeholder="Send a message" name="message" id="message" onkeydown="handleEnter(event)">
+    <button type="button" name="send" id="send" onClick="send()">
+      Send
+    </button>
+  </div>
+</div>
+
+<script type="text/javascript">
+    // Initialize Socket.IO
+    var socketio = io();
+
+    // Reference to the chat element
+    const chat = document.getElementById("chat");
+
+    // Function to display a message in the chat box
+    const showMessage = function (username, msg) {
+        const message = `
+            <div class="msg">
+                <strong>${username}</strong>: ${msg}
+            </div>
+        `;
+        chat.innerHTML += message;
+
+        // Scroll the chat box to the bottom to show the latest message
+        chat.scrollTop = chat.scrollHeight;
+    }
+
+    // Listen for incoming messages and display them
+    socketio.on("message", function(data) {
+        showMessage(data.username, data.message);
+    });
+
+    // Function to send a message
+    const send = function () {
+        const message = document.getElementById("message")
+        if (message.value != ""){
+            console.log(2222)
+            socketio.send({"message": message.value})
+            message.value = ""
+            }
+    }
+
+    // Function to handle Enter key for sending messages
+    function handleEnter(event) {
+        if (event.key === "Enter") {
+            event.preventDefault();
+            send();
+        }
+    }
+
+// Display previous chat messages if available
+{% for msg in message_history %}
+  showMessage("{{msg.username}}", "{{msg.message}}");
+{% endfor %}
+
+</script>
+
+{% endblock %}
