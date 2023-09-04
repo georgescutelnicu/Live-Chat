@@ -9,3 +9,8 @@ LiveChat is a real-time chat application built using Flask and Socket.IO. It all
 - User-friendly interface.
 - Automatic room code generation.
 - Instructions and error handling for a smooth user experience.
+
+<br>
+<img src="extras/Screenshot_1.png" width="400">
+<br>
+<img src="extras/Screenshot_2.png" width="400">
