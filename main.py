@@ -6,7 +6,7 @@ import string
 
 # Configure Flask and SocketIO
 app = Flask(__name__)
-app.config['SECRET_KEY'] = 'secretkey'
+app.config['SECRET_KEY'] = os.environ['SECRET_KEY']
 socketio = SocketIO(app)
 
 # Create a dictionary to store room informations - {room_code: {"username": [], "messages": []}}
